@@ -1,0 +1,267 @@
+:root {
+  --main-color: #2196f3;
+  --main-color-alt: #1787e0;
+  --main-transition-duration: 0.3s;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 62.6%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Cairo", sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.grid {
+  display: grid;
+}
+
+.grid-1x2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-1x3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.container {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*Small screen*/
+@media screen and (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+/*Medium screen*/
+@media screen and (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+/*Large screen*/
+@media screen and (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+/*Start header*/
+header {
+  background-color: white;
+  box-shadow: 0 0 1rem #ddd;
+}
+
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+header .container a.logo {
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--main-color);
+  height: 7.2rem;
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 767px) {
+  header .container a.logo {
+    width: 100%;
+    height: 5rem;
+    justify-content: center;
+  }
+}
+
+header .container ul {
+  display: flex;
+}
+
+@media screen and (max-width: 767px) {
+  header .container ul {
+    margin: auto;
+  }
+}
+
+header .container ul > li > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 7.2rem;
+  font-size: 2rem;
+  color: black;
+  position: relative;
+  padding: 0 3rem;
+  transition: var(--main-transition-duration);
+  overflow: hidden; /*That will hide the before element and make it appear on hover when the left change to 0 in hover effect*/
+}
+
+@media screen and (max-width: 767px) {
+  header .container ul > li > a {
+    padding: 0 1rem;
+    font-size: 1.6rem;
+    height: 4rem;
+  }
+}
+
+header .container ul li a::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  background-color: var(--main-color);
+  top: 0;
+  left: -100%;
+}
+
+header .container ul li a:hover {
+  color: var(--main-color);
+  background-color: #fafafa;
+}
+
+header .container ul li > a:hover::before {
+  left: 0;
+  transition: var(--main-transition-duration);
+}
+
+header .container ul li .mega-menu {
+  width: 100%;
+  background-color: white;
+  display: flex;
+  position: absolute;
+  left: 0;
+  border-bottom: 3px solid var(--main-color);
+  /*opacity: 0;*/
+  display: none;
+  padding: 3rem;
+  top: calc(100% + 5rem);
+}
+
+/*End header*/
+
+/*Start Landing*/
+.landing {
+  position: relative;
+}
+
+.landing::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #ececec;
+  z-index: -1;
+  transform: skewY(-8deg);
+  transform-origin: top left;
+}
+
+.landing .container {
+  min-height: calc(100vh - 72px);
+  align-items: center;
+  justify-items: center;
+}
+
+@media screen and (max-width: 991px) {
+  .landing .container.grid-1x2 {
+    grid-template-columns: 1fr;
+    height: 100vh;
+  }
+}
+
+.landing .container .intro h1 {
+  font-size: 4rem;
+  margin: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .landing .container .intro h1 {
+    font-size: 3rem;
+  }
+}
+
+.landing .container .intro p {
+  font-size: 2rem;
+  line-height: 1.7;
+  color: #777;
+  max-width: 50rem;
+  margin: 5px 0 0;
+}
+
+@media screen and (max-width: 767px) {
+  .landing .container .intro p {
+    font-size: 1.8rem;
+  }
+}
+
+.landing .container .image img {
+  max-width: 100%;
+  width: 40rem;
+  animation: up-down 5s linear infinite;
+}
+
+@keyframes up-down {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5rem);
+  }
+}
+
+.landing .go-down {
+  color: var(--main-color);
+  position: absolute;
+  left: 50%;
+  transform: translateX(50%);
+  bottom: 3rem;
+  font-size: 3rem;
+  transition: var(--main-transition-duration);
+}
+
+.landing a.go-down:hover {
+  color: var(--main-color-alt);
+}
+
+.landing a.go-down i {
+  animation: bouncing 1s infinite;
+}
+
+@keyframes bouncing {
+  20% {
+    transform: translateY(1rem);
+  }
+  50%,
+  100% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(0.5rem);
+  }
+}
+/*End Landing*/
