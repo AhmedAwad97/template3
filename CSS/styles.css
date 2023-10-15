@@ -71,6 +71,7 @@ a {
 header {
   background-color: white;
   box-shadow: 0 0 1rem #ddd;
+  position: relative;
 }
 
 header .container {
@@ -78,6 +79,7 @@ header .container {
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
+  position: relative;
 }
 
 header .container a.logo {
@@ -97,7 +99,7 @@ header .container a.logo {
   }
 }
 
-header .container ul {
+header .container > ul {
   display: flex;
 }
 
@@ -107,7 +109,7 @@ header .container ul {
   }
 }
 
-header .container ul > li > a {
+header .container > ul > li > a {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -121,14 +123,14 @@ header .container ul > li > a {
 }
 
 @media screen and (max-width: 767px) {
-  header .container ul > li > a {
+  header .container > ul > li > a {
     padding: 0 1rem;
     font-size: 1.6rem;
     height: 4rem;
   }
 }
 
-header .container ul li a::before {
+header .container > ul > li > a::before {
   content: "";
   position: absolute;
   width: 100%;
@@ -138,27 +140,97 @@ header .container ul li a::before {
   left: -100%;
 }
 
-header .container ul li a:hover {
+header .container > ul > li > a:hover {
   color: var(--main-color);
   background-color: #fafafa;
 }
 
-header .container ul li > a:hover::before {
+header .container > ul > li > a:hover::before {
   left: 0;
   transition: var(--main-transition-duration);
 }
 
-header .container ul li .mega-menu {
-  width: 100%;
-  background-color: white;
-  display: flex;
+header .mega-menu {
   position: absolute;
   left: 0;
-  border-bottom: 3px solid var(--main-color);
-  /*opacity: 0;*/
-  display: none;
-  padding: 3rem;
   top: calc(100% + 5rem);
+  width: 100%;
+  z-index: 100;
+  border-bottom: 3px solid var(--main-color);
+  background-color: white;
+  padding: 2rem;
+  grid-template-columns: 310px auto;
+  gap: 4rem;
+  display: none;
+  transition: display var(--main-transition-duration),
+    top var(--main-transition-duration);
+}
+
+header .container > ul > li:last-child:hover .mega-menu {
+  display: grid;
+  top: calc(100% + 1px);
+}
+
+header .mega-menu .image img {
+  max-width: 100%;
+  height: 30rem;
+}
+
+@media screen and (max-width: 991px) {
+  header .mega-menu {
+    grid-template-columns: 1fr;
+  }
+  header .mega-menu .image img {
+    display: none;
+  }
+}
+
+header .mega-menu ul {
+  gap: 0 5rem;
+}
+
+@media screen and (max-width: 767px) {
+  header .mega-menu ul {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+
+header .mega-menu ul li {
+  position: relative;
+}
+
+header .mega-menu ul li::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  z-index: -1;
+  background-color: #fafafa;
+  transition: var(--main-transition-duration);
+}
+
+header .mega-menu ul li:hover:before {
+  width: 100%;
+}
+
+header .mega-menu ul li a {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: bold;
+  padding: 2rem;
+  color: var(--main-color);
+  transition: var(--main-transition-duration);
+}
+
+header .mega-menu ul li:not(:nth-last-child(1)):not(:nth-last-child(2)) {
+  border-bottom: 1px solid #ccc;
+}
+
+header .mega-menu ul li i {
+  margin-right: 1rem;
 }
 
 /*End header*/
