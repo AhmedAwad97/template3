@@ -787,3 +787,114 @@ header .mega-menu ul li i {
   color: #777;
 }
 /*End Testimonial*/
+
+/*Stat team member*/
+.team-member {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
+
+.team-member .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 4rem;
+}
+
+.team-member .member-card {
+  position: relative;
+}
+
+.team-member .member-card::before,
+.team-member .member-card::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  right: 0;
+  top: 0;
+  background-color: #f3f3f3;
+  border-radius: 1rem;
+}
+
+.team-member .member-card::before {
+  width: calc(100% - 6rem);
+  z-index: -2;
+}
+
+.team-member .member-card::after {
+  width: 0;
+  z-index: -1;
+  background-color: #e4e4e4;
+  transition: var(--main-transition-duration);
+}
+
+.team-member .member-card:hover::after {
+  width: calc(100% - 6rem);
+  background: linear-gradient(
+    to right,
+    var(--section-background) 50%,
+    #ccc 50%
+  );
+  background-size: 200% 100%;
+  background-position: right bottom;
+}
+
+.team-member .member-card .data {
+  display: flex;
+  align-items: center;
+  padding-top: 6rem;
+}
+
+.team-member .member-card img {
+  width: calc(100% - 6rem);
+  border-radius: 1rem;
+  transition: var(--main-transition-duration);
+}
+
+.team-member .member-card:hover img {
+  filter: grayscale(100%);
+}
+
+.team-member .member-card .links {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 6rem;
+}
+
+.team-member .member-card .links a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 6rem;
+}
+
+.team-member .member-card .links a i {
+  font-size: 1.8rem;
+  color: #777;
+  transition: var(--main-transition-duration);
+}
+
+.team-member .member-card .links a:hover i {
+  color: var(--main-color);
+}
+
+.team-member .member-card .info {
+  padding: 3rem 0 3rem 8rem;
+}
+
+.team-member .member-card .info h3 {
+  color: var(--main-color);
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  transition: var(--main-transition-duration);
+}
+
+.team-member .member-card:hover h3 {
+  color: #777;
+}
+
+.team-member .member-card .info p {
+  color: #777;
+  font-size: 1.4rem;
+}
+/*End team member*/
