@@ -898,3 +898,100 @@ header .mega-menu ul li i {
   font-size: 1.4rem;
 }
 /*End team member*/
+
+/*Start Services*/
+.services {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+  background-color: var(--section-background);
+}
+
+.services .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 4rem;
+}
+
+.services .box {
+  background-color: white;
+  text-align: center;
+  padding-top: 2rem;
+  box-shadow: 0 1px 5px #777;
+  transition: var(--main-transition-duration);
+  position: relative;
+  counter-increment: services;
+}
+
+.services .box::before {
+  content: "";
+  position: absolute;
+  height: 3px;
+  width: 0;
+  top: -3px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--main-color);
+  transition: var(--main-transition-duration);
+}
+
+.services .box:hover {
+  transform: translateY(-1rem);
+}
+
+.services .box:hover::before {
+  width: 100%;
+}
+
+.services .box i {
+  font-size: 6rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  color: #d5d5d5;
+}
+
+.services .box h3 {
+  font-size: 2.6rem;
+  color: var(--main-color);
+}
+
+.services .box .info {
+  background-color: #f9f9f9;
+  padding: 1.5rem;
+  margin-top: 4rem;
+  text-align: right;
+  position: relative;
+}
+
+.services .box .info::before,
+.services .box .info::after {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 8rem;
+}
+
+.services .box .info::before {
+  content: "0" counter(services);
+  left: 0;
+  background-color: var(--main-color);
+  color: white;
+  font-weight: bold;
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 1.5rem;
+}
+
+.services .box .info::after {
+  content: "";
+  left: 8rem;
+  background-color: #d5d5d5;
+  transform: skew(-30deg);
+}
+
+.services .box .info a {
+  color: var(--main-color);
+  font-size: 1.6rem;
+}
+/*End Services*/
