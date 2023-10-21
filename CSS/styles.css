@@ -379,7 +379,6 @@ header .mega-menu ul li i {
 
 .landing .container .image img {
   max-width: 100%;
-  width: 40rem;
   animation: up-down 5s linear infinite;
 }
 
@@ -995,3 +994,78 @@ header .mega-menu ul li i {
   font-size: 1.6rem;
 }
 /*End Services*/
+
+/*Start Skills*/
+.skills {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
+
+.skills .container {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  .skills .container {
+    grid-template-columns: 1fr;
+  }
+  .skills .info {
+    padding: 2rem 3rem;
+  }
+}
+
+.skills .container img {
+  max-width: 100%;
+}
+
+.skills .info .skill {
+  position: relative;
+}
+
+.skills .info .skill:not(:first-child) {
+  margin-top: 3rem;
+}
+
+.skills .info .skill h3 {
+  font-size: 2.4rem;
+}
+
+.skills .info .skill .progress {
+  margin-top: 2rem;
+  background-color: #ddd;
+  height: 3rem;
+  position: relative;
+}
+
+.skills .info .skill .progress::before {
+  content: attr(data-width);
+  position: absolute;
+  right: 1rem;
+  top: -5rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: var(--main-color);
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 0.5rem;
+}
+
+.skills .info .skill .progress span {
+  position: absolute;
+  height: 100%;
+  background-color: var(--main-color);
+  animation: width-fill 0.5s linear 0 1 forwards;
+}
+
+@keyframes width-fill {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+/*End Skills*/
