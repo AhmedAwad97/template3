@@ -123,6 +123,24 @@ a {
   animation: right-move 0.5s linear forwards;
 }
 
+.dot {
+  position: absolute;
+  background-image: url(../img/dots.png);
+  background-repeat: no-repeat;
+  width: 20rem;
+  height: 20rem;
+}
+
+.dot.dot-left {
+  bottom: 10rem;
+  left: 0;
+}
+
+.dot.dot-right {
+  top: 10rem;
+  right: 0;
+}
+
 @keyframes left-move {
   50% {
     left: 0;
@@ -1153,24 +1171,6 @@ header .mega-menu ul li i {
   position: relative;
 }
 
-.event .dot {
-  position: absolute;
-  background-image: url(../img/dots.png);
-  background-repeat: no-repeat;
-  width: 20rem;
-  height: 20rem;
-}
-
-.event .dot.dot-left {
-  bottom: 10rem;
-  left: 0;
-}
-
-.event .dot.dot-right {
-  top: 10rem;
-  right: 0;
-}
-
 .event .container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
@@ -1321,3 +1321,140 @@ header .mega-menu ul li i {
   background-color: var(--main-color-alt);
 }
 /*End event section*/
+
+/*Start pricing plans*/
+.pricing {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+  background-color: var(--section-background);
+  position: relative;
+}
+
+.pricing .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 3rem;
+}
+
+.pricing .plan-card {
+  background-color: white;
+  text-align: center;
+  box-shadow: 0 1px 6px 2px #ccc;
+  position: relative;
+  z-index: 1;
+}
+
+@media screen and (min-width: 1200px) {
+  .pricing .plan-card.popular {
+    transform: translateY(-3rem);
+  }
+}
+
+.pricing .plan-card.popular .label {
+  position: absolute;
+  writing-mode: vertical-rl;
+  right: 1rem;
+  background-color: var(--main-color);
+  color: white;
+  padding: 1rem 1rem 3rem 1rem;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.pricing .plan-card.popular .label::before {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  right: 0;
+  border-style: solid;
+  border-color: transparent transparent white;
+  border-width: 2rem;
+}
+
+.pricing .plan-card::before,
+.pricing .plan-card::after {
+  content: "";
+  position: absolute;
+  height: 50%;
+  width: 0;
+  background-color: #f6f6f6;
+  transition: var(--main-transition-duration);
+  z-index: -1;
+}
+
+.pricing .plan-card::before {
+  top: 0;
+  left: 0;
+}
+
+.pricing .plan-card::after {
+  right: 0;
+  bottom: 0;
+}
+
+.pricing .plan-card:hover:before,
+.pricing .plan-card:hover::after {
+  width: 100%;
+}
+
+.pricing .plan-card h2 {
+  font-size: 3rem;
+  margin: 3rem 0;
+}
+
+.pricing .plan-card i {
+  color: var(--main-color);
+  font-size: 8rem;
+  margin-bottom: 2rem;
+}
+
+.pricing .plan-card span.price {
+  color: var(--main-color);
+  font-size: 5rem;
+  font-weight: bold;
+  display: block;
+}
+
+.pricing .plan-card span.type {
+  font-size: 1.6rem;
+  color: #777;
+  text-transform: capitalize;
+  display: block;
+  margin: 1rem 0;
+}
+
+.pricing .plan-card ul {
+  text-align: left;
+}
+
+.pricing li {
+  padding: 2rem;
+  border-top: 1px solid #eee;
+  font-size: 2rem;
+}
+
+.pricing li::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f00c";
+  font-weight: 900;
+  color: var(--main-color);
+  margin-right: 1rem;
+}
+
+.pricing button {
+  padding: 1rem;
+  background-color: white;
+  color: var(--main-color);
+  font-size: 1.6rem;
+  font-weight: bold;
+  border: 2px solid var(--main-color);
+  border-radius: 6px;
+  transition: var(--main-transition-duration);
+  margin: 3rem 0;
+}
+
+.pricing button:hover {
+  background-color: var(--main-color);
+  color: white;
+}
+/*End pricing plans*/
