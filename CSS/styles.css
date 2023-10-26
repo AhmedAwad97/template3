@@ -1008,7 +1008,7 @@ header .mega-menu ul li i {
   align-items: center;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .skills .container {
     grid-template-columns: 1fr;
   }
@@ -1084,6 +1084,18 @@ header .mega-menu ul li i {
   align-items: center;
 }
 
+@media screen and (max-width: 991px) {
+  .how-work .container {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 6rem;
+  }
+}
+
+.how-work .image > img {
+  max-width: 100%;
+}
+
 .how-work .content .info {
   display: flex;
   align-items: center;
@@ -1133,3 +1145,179 @@ header .mega-menu ul li i {
   line-height: 1.7;
 }
 /*End how it work section*/
+
+/*Start event section*/
+.event {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+  position: relative;
+}
+
+.event .dot {
+  position: absolute;
+  background-image: url(../img/dots.png);
+  background-repeat: no-repeat;
+  width: 20rem;
+  height: 20rem;
+}
+
+.event .dot.dot-left {
+  bottom: 10rem;
+  left: 0;
+}
+
+.event .dot.dot-right {
+  top: 10rem;
+  right: 0;
+}
+
+.event .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  align-items: center;
+  justify-content: center;
+  gap: 5rem 0;
+}
+
+@media screen and (max-width: 767px) {
+  .event .container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.event .container img {
+  max-width: 45rem;
+  justify-self: center;
+}
+
+@media screen and (max-width: 767px) {
+  .event .container img {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .event .container img {
+    max-width: 30rem;
+  }
+}
+
+.event .container .content {
+  text-align: center;
+}
+
+.event .container .time {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 4rem;
+}
+
+.event .container .time .unit {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 7.5rem;
+  text-align: center;
+  transition: var(--main-transition-duration);
+}
+
+.event .container .time .unit:hover,
+.event .container .time .unit:hover span:last-child {
+  border-color: var(--main-color);
+}
+
+.event .container .time .unit span {
+  display: block;
+}
+
+.event .container .time .unit span:first-child {
+  color: var(--main-color);
+  font-size: 3.5rem;
+  font-weight: bold;
+  padding: 1.5rem;
+}
+
+.event .container .time .unit span:last-child {
+  border-top: 1px solid #ccc;
+  font-size: 1.3rem;
+  padding: 8px 10px;
+  transition: var(--main-transition-duration);
+}
+
+.event .container .content h2 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.event .container .content p {
+  color: #777;
+  font-size: 1.6rem;
+  line-height: 1.7;
+}
+
+.event .container form {
+  grid-column: span 2;
+  background-color: #f6f5f5;
+  justify-self: center;
+  display: flex;
+  gap: 2rem;
+  width: 600px;
+  max-width: 100%;
+  padding: 3rem;
+  border-radius: 5rem;
+}
+
+@media screen and (max-width: 767px) {
+  .event .container form {
+    width: 100%;
+    padding: 2rem;
+    border-radius: 0;
+    flex-direction: column;
+  }
+}
+
+.event .container form input[type="email"],
+.event .container form button {
+  border: none;
+  border-radius: 5rem;
+  padding: 2rem;
+  font-size: 1.8rem;
+}
+
+@media screen and (max-width: 767px) {
+  .event .container form input[type="email"],
+  .event .container form button {
+    border-radius: 0;
+  }
+}
+
+.event .container form input[type="email"] {
+  caret-color: var(--main-color);
+  flex: 1;
+}
+
+.event .container form input[type="email"]:focus {
+  outline: none;
+}
+
+.event .container form input[type="email"]::placeholder {
+  transition: opacity var(--main-transition-duration);
+}
+
+.event .container form input[type="email"]:focus::placeholder {
+  opacity: 0;
+}
+
+.event .container form button {
+  background-color: var(--main-color);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: var(--main-transition-duration);
+}
+
+.event .container form button:hover {
+  background-color: var(--main-color-alt);
+}
+/*End event section*/
