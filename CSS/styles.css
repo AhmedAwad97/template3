@@ -1458,3 +1458,117 @@ header .mega-menu ul li i {
   color: white;
 }
 /*End pricing plans*/
+
+/*Start video section*/
+.videos {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
+
+.videos .container .holder {
+  background-color: var(--section-background);
+  border: 3px solid #ddd;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+}
+
+@media screen and (max-width: 767px) {
+  .videos .container .holder {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+
+.videos .list {
+  background-color: white;
+}
+
+.videos .list .title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f4f4f4;
+  padding: 2rem;
+  font-weight: bold;
+  font-size: 1.6rem;
+}
+
+.videos .list .title h2 {
+  text-transform: capitalize;
+}
+
+.videos .list .title a {
+  display: block;
+  width: 50px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.videos .list .title i {
+  color: black;
+  transition: var(--main-transition-duration);
+}
+
+.videos .list .title i:hover {
+  color: var(--main-color);
+}
+
+.videos .list ul li {
+  padding: 2rem;
+  border-top: 1px solid var(--section-background);
+  font-size: 1.6rem;
+  transition: var(--main-transition-duration);
+}
+
+.videos .list ul li:hover {
+  background-color: #fafafa;
+}
+
+.videos .list ul li:hover a {
+  color: var(--main-color);
+}
+
+.videos li a {
+  display: block;
+  color: black;
+  margin-bottom: 1rem;
+  transition: var(--main-transition-duration);
+}
+
+.videos li span {
+  color: #777;
+}
+
+.videos .container .preview {
+  padding: 2rem 2rem 2rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 767px) {
+  .videos .container .preview {
+    padding: 1rem;
+  }
+}
+
+.videos .container .preview img {
+  max-width: 100%;
+}
+
+.videos .preview .info {
+  background-color: white;
+  padding: 2rem;
+  text-transform: capitalize;
+  font-size: 2rem;
+}
+
+@media screen and (max-width: 767px) {
+  .videos .preview .info {
+    margin-top: 2rem;
+  }
+}
+/*End video section*/
