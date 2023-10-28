@@ -37,6 +37,13 @@ a {
   grid-template-columns: repeat(2, 1fr);
 }
 
+@media screen and (max-width: 676px) {
+  .grid-1x2 {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
 .grid-1x3 {
   grid-template-columns: repeat(3, 1fr);
 }
@@ -351,6 +358,8 @@ header .mega-menu ul li i {
   position: absolute;
   width: 100%;
   height: 100%;
+  left: 0;
+  top: -40px;
   background-color: #ececec;
   z-index: -1;
   transform: skewY(-8deg);
@@ -365,7 +374,6 @@ header .mega-menu ul li i {
 
 @media screen and (max-width: 991px) {
   .landing .container.grid-1x2 {
-    grid-template-columns: 1fr;
     height: 100vh;
   }
 }
@@ -1661,3 +1669,113 @@ header .mega-menu ul li i {
   font-weight: bold;
 }
 /*End Stats*/
+
+/*Start discount section*/
+.discount {
+  min-height: 100vh;
+}
+
+.discount .image {
+  background-image: url(../img/discount-background1.jpg);
+  background-size: cover;
+  position: relative;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  animation: change-background 10s linear infinite;
+}
+
+.discount .image::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgb(23 135 224 / 97%);
+  z-index: -1;
+}
+
+.discount .content {
+  padding: 2rem 3rem;
+  text-align: center;
+}
+.discount .image .content h2 {
+  font-size: 4rem;
+  margin-bottom: 4rem;
+  letter-spacing: -2px;
+}
+.discount .image .content p {
+  font-size: 2rem;
+  line-height: 1.7;
+}
+.discount .image .content img {
+  width: 30rem;
+  max-width: 100%;
+  margin-top: 4rem;
+}
+
+.discount .form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.discount .form h2 {
+  font-size: 4rem;
+  margin-bottom: 3rem;
+  text-transform: capitalize;
+}
+
+.discount form input,
+.discount form textarea {
+  display: block;
+  width: 100%;
+  padding: 1.5rem;
+  border: none;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  caret-color: var(--main-color);
+}
+
+.discount form input:focus,
+.discount form textarea:focus {
+  outline: none;
+}
+
+.discount form input:not(input[type="submit"]),
+.discount form textarea {
+  border-bottom: 1px solid #ddd;
+  background-color: #f9f9f9;
+}
+
+.discount form textarea {
+  resize: none;
+  height: 20rem;
+}
+
+.discount form input[type="submit"] {
+  background-color: var(--main-color);
+  color: white;
+  font-weight: bold;
+  margin-top: 2rem;
+  cursor: pointer;
+  transition: var(--main-transition-duration);
+}
+
+.discount form input[type="submit"]:hover {
+  background-color: var(--main-color-alt);
+}
+
+@keyframes change-background {
+  0%,
+  100% {
+    background-image: url(../img/discount-background1.jpg);
+  }
+  50% {
+    background-image: url(../img/discount-background2.jpg);
+  }
+}
+/*end discount section*/
