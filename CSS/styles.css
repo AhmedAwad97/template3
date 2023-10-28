@@ -1779,3 +1779,132 @@ header .mega-menu ul li i {
   }
 }
 /*end discount section*/
+
+/*Start Footer*/
+footer {
+  background-color: #191919;
+  padding: 7rem 0 0;
+}
+
+footer .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 3rem;
+}
+
+@media screen and (max-width: 991px) {
+  footer .container {
+    gap: 5rem 3rem;
+  }
+}
+
+footer .section.social h2 {
+  font-size: 4.8rem;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+footer .section.social ul {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 1rem;
+}
+
+footer .section.social ul a {
+  display: block;
+  font-size: 2rem;
+  background-color: #313131;
+  color: #b9b9b9;
+  padding: 1.5rem;
+  transition: var(--main-transition-duration);
+}
+
+footer .section.social ul a.facebook:hover {
+  background-color: #1877f2;
+}
+
+footer .section.social ul a.twitter:hover {
+  background-color: #1da1f2;
+}
+
+footer .section.social ul a.youtube:hover {
+  background-color: #ff0000;
+}
+
+footer .section.social p {
+  margin-top: 2rem;
+  font-size: 1.8rem;
+  color: #b9b9b9;
+  line-height: 1.7;
+}
+
+footer .section.links ul li {
+  border-bottom: 1px solid #444;
+}
+
+footer .section.links ul a {
+  display: block;
+  color: #b9b9b9;
+  font-size: 1.6rem;
+  padding: 1.5rem;
+  position: relative;
+  margin-left: 1rem;
+  transition: var(--main-transition-duration);
+}
+
+footer .section.links ul a::before {
+  content: "\f101";
+  position: absolute;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  left: -1rem;
+  color: var(--main-color);
+}
+
+footer .section.links ul a:hover {
+  transform: translateX(1rem);
+  color: white;
+}
+
+footer .section.contact address,
+footer .section.contact .hours,
+footer .section.contact .numbers {
+  margin-bottom: 4rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+footer .section.contact i {
+  font-size: 2rem;
+  color: var(--main-color);
+}
+
+footer .section.contact p {
+  font-size: 1.6rem;
+  color: #b9b9b9;
+  line-height: 1.7;
+}
+
+footer .section.gallery img {
+  width: 78px;
+  border: 3px solid white;
+  margin: 2px;
+}
+
+footer .copyright {
+  margin-top: 3rem;
+  padding: 2rem;
+  font-size: 1.6rem;
+  color: #b9b9b9;
+  display: flex;
+  justify-content: center;
+}
+
+footer .copyright a {
+  color: var(--main-color);
+  margin: 0 0.5rem;
+  font-size: 1.8rem;
+}
+/*End Footer*/
